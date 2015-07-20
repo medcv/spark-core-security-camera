@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 /* POST to  image . */
 router.post('/img', function(req, res, next) {
 
-var fileName = './public/imgs/cams.jpg';
+var fileName = './public/images/cams.jpg';
 cnt = cnt + 1;
 
 var file = fs.createWriteStream(fileName);
@@ -21,7 +21,7 @@ var file = fs.createWriteStream(fileName);
 /* POST to video . */
 router.post('/video', function(req, res, next) {
 
-var fileName = './public/imgs/cams.jpg';
+var fileName = './public/images/cams.jpg';
 cnt = cnt + 1;
 
 var file = fs.createWriteStream(fileName);

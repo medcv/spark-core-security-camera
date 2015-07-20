@@ -1,18 +1,11 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var fs = require('fs');
-var log4js = require('log4js');
-
-//console log is loaded by default, so you won't normally need to do this
-log4js.loadAppender('console');
-log4js.loadAppender('file');
-log4js.addAppender(log4js.appenders.console());
-log4js.addAppender(log4js.appenders.file('logs/server.log'), 'HTTP');
-
 
 var index = require('./routes/index');
 var cameras = require('./routes/cameras');
@@ -26,6 +19,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

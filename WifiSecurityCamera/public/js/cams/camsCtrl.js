@@ -15,7 +15,7 @@ $scope.isStop = true;
 }
     function getVideo(LedObject){
         Cam.save(LedObject).$promise.then(function (data) {
-        $scope.imagePath = '../imgs/cams.jpg' +'?_ts=' + new Date().getTime();
+        $scope.imagePath = '../images/cams.jpg' +'?_ts=' + new Date().getTime();
         $scope.isWaiting = false;
         $scope.isPic = true;
          $scope.isStartVideo = false;

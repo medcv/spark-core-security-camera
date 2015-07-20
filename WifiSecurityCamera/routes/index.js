@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* Get Home Page. */
 router.get('/', function(req, res, next) {
-      res.render('index', { title: 'Welcome to your home Security app' });
+      res.render('index', { title: 'Home Security Camera' });
 });
 
 module.exports = router;
