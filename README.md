@@ -26,8 +26,8 @@ Do following steps Under *WifiSecurityCamera*
 # Note
 
 You should edit following files and put your corresponding server IP and device information
-  - getVido
-  - public/js/app.js
+  - *getVido*
+  - *public/js/app.js*
 
 [node.js]:http://nodejs.org
 [localhost:3000]:http://localhost:3000/
