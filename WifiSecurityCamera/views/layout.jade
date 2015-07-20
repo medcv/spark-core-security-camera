@@ -1,0 +1,24 @@
+doctype html
+html(ng-app = 'app')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='angular-material/angular-material.min.css')
+    script(src='jquery/dist/jquery.js')
+    script(src='angular/angular.min.js')
+    script(src='angular-material/angular-material.js')
+    script(src='angular-animate/angular-animate.min.js')
+    script(src='angular-aria/angular-aria.min.js')
+    script(src='angular-route/angular-route.js')
+    script(src='angular-resource/angular-resource.js')
+    script(src='spark/dist/spark.min.js')
+
+    script(src='js/app.js')
+    script(src='js/led/Led.js')
+    script(src='js/led/ledCtrl.js')
+    script(src='js/sideNavCtrl.js')
+    script(src='js/cams/camsCtrl.js')
+    script(src='js/cams/cam.js')
+
+  body
+    block content

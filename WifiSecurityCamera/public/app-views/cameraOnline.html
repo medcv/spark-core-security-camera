@@ -1,0 +1,11 @@
+<div>
+    <md-button md-no-ink class="md-primary" ng-click="cameraFunc('takePics')">GET Picture</md-button>
+    <md-button md-no-ink class="md-primary" ng-click="cameraFunc('takeVideo')" ng-show="!isStartVideo">Start Video</md-button>
+    <md-button md-no-ink class="md-primary" ng-click="stopVideo()" ng-show="isStartVideo">Stop Video</md-button>
+    <md-button md-no-ink class="md-primary" ng-click="cameraFunc('reset')">Reset Camera</md-button>
+    <h2 ng-if="isCamera">Home Camera</h2>
+</div>
+<div>
+    <md-progress-circular class="md-hue-2" md-mode="indeterminate" ng-if="isWaiting"></md-progress-circular>
+    <img ng-src={{imagePath}} alt="home Online" style="width:304px;height:228px;" ng-show="isPic">
+</div>

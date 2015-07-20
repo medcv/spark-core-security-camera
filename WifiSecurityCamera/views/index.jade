@@ -1,0 +1,25 @@
+extends layout
+
+block content
+   div(ng-controller='SideNavCtrl' layout="row")
+    div
+     md-sidenav(class="md-sidenav-left site-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')")
+      md-toolbar(class="md-theme-indigo")
+       h1(class="md-toolbar-tools") Options
+      md-content
+       md-list
+        md-list-item(class="md-3-line" ng-click='getLeds()')
+         div(class="md-list-item-text")
+          h3 Leds
+       md-list-item(class="md-3-line" ng-click='getCamera()')
+         div(class="md-list-item-text")
+          h3 Camera
+       md-list-item(class="md-3-line" ng-click='closeSideNav()' hide-gt-md)
+         div(class="md-list-item-text")
+          h3 Close
+    div(layout-padding)
+     h1= title
+      p Welcome to #{title}
+      div
+       md-button(ng-click="toggleLeft()" class="md-primary" hide-gt-md) Menu
+     div(ng-view)
