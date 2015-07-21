@@ -6,12 +6,25 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var fs = require('fs');
+var FileStreamRotator = require('file-stream-rotator')
 
 var index = require('./routes/index');
 var cameras = require('./routes/cameras');
 
-var camFs=fs;
 var app = express();
+
+var logDirectory = __dirname + '/log'
+// ensure log directory exists
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
+
+// create a rotating write stream
+var accessLogStream = FileStreamRotator.getStream({
+  filename: logDirectory + '/access-%DATE%.log',
+  frequency: 'daily',
+  verbose: false
+})
+// setup the logger
+app.use(logger('combined', {stream: accessLogStream}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,12 +38,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  req.camFs = camFs;
-  next();
-});
 
 app.use('/', index);
 app.use('/cameras', cameras);
