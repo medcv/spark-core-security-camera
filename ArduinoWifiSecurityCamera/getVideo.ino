@@ -215,7 +215,7 @@ uint8_t * camReadPicture(uint8_t n) {
 void setup() {
 
   Spark.function("camera", cameraFunc);
-  Spark.function("blink", blinkFunc);
+//  Spark.function("blink", blinkFunc);
   Spark.variable("temperature", &sparkTempF, INT);
   Serial.begin(9600);
   Serial.println("VC0706 Camera snapshot test");
