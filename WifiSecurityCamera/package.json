@@ -21,6 +21,7 @@
     "jade": "~1.9.2",
     "jquery": "^2.1.4",
     "log4js": "^0.6.26",
+    "morgan": "^1.6.1",
     "nodetime": "*",
     "serve-favicon": "~2.2.1",
     "spark": "^0.5.9",
